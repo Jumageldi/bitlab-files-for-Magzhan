@@ -1,0 +1,442 @@
+
+<style >
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+  }
+  
+  .header-middle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f2f4f8;
+      padding: 10px 20px;
+  }
+  
+  .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4277a5;
+  }
+  
+  .fa-search {
+      margin-right: 10px;
+      color: #a1a7b3;
+  }
+  
+  input[type="search"] {
+      border: none;
+      outline: none;
+      width: 300px;
+      height: 30px;
+      border-radius: 15px;
+      padding: 0 15px;
+      font-size: 14px;
+  }
+  
+  .page {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+  }
+  
+  .sidebar-left {
+      width: 254px;
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 15px;
+  }
+  
+  .user-menu {
+      list-style: none;
+  }
+  
+  .user-menu li {
+      font-size: 14px;
+      color: #7c7c9e;
+      margin-bottom: 15px;
+      cursor: pointer;
+  }
+  
+  .user-menu li:hover {
+      color: #4277a5;
+  }
+  
+  .friends-list-center {
+      flex-basis: 691px;
+      background-color: #fff;
+      border-radius: 4px;
+      margin: 0 9px;
+  }
+  
+  .friends-list-caption {
+      background-color: #fafaff;
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 12px 0px 25px;
+  }
+  
+  .all-online-freinds {
+      display: flex;
+  }
+  
+  .all-friends-caption,
+  .online-friends-caption {
+      font-size: 14px;
+      color: #7c7c9e;
+      margin-right: 25px;
+      cursor: pointer;
+  }
+  
+  .all-friends-caption span,
+  .online-friends-caption span {
+      display: block;
+  }
+  
+  .all-friends-caption span:last-child,
+  .online-friends-caption span:last-child {
+      font-weight: bold;
+      color: #000;
+  }
+  
+  .search-friends-btn {
+      background-color: #4277a5 !important;
+      font-size: 14px;
+      padding: 4px;
+      border: none;
+      width: 124px;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+  
+  .d3 {
+      display: flex;
+      align-items: center;
+      padding: 12px 12px 0px 25px;
+  }
+  
+  .d3 i {
+      margin-right: 10px;
+      color: #a1a7b3;
+  }
+  
+  .d3 input[type="text"] {
+      border: none;
+      outline: none;
+      width: 300px;
+      height: 30px;
+      border-radius: 15px;
+      padding: 0 15px;
+      font-size: 14px;
+  }
+  
+  .friends-list-wall {
+      padding: 15px;
+  }
+  
+  .friends-list-wall-li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+  }
+  
+  .friends-list-wall-li img {
+      width: 63px;
+      height: 63px;
+      object-fit: cover;
+      border-radius: 63px;
+  }
+  
+  .friends-list-wall-li-info {
+      margin-left: 10px;
+  }
+  
+  .friends-list-wall-li-info a {
+      font-size: 14px;
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+  }
+  
+  .friends-list-wall-li-info p {
+      font-size: 14px;
+      color: #7c7c9e;
+      margin-top: 5px;
+  }
+  
+  .friends-list-wall-li-info a span {
+      display: inline-block;
+      background-color: #f2f4f8;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 12px;
+      color: #4277a5;
+      margin-top: 5px;
+  }
+  
+  .second-right-sidebar {
+      width: 254px;
+      border-radius: 4px;
+      margin: 0 0 0 9px;
+  }
+  
+  .friends-request {
+      background-color: #fff;
+      padding: 8px 0 0 0;
+  }
+  
+  ul.friends-request-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+  
+  ul.friends-request-list li {
+      margin: 0 0 0px 0;
+      padding: 15px 0 10px 18px;
+      font-size: 14px;
+      color: #7c7c9e;
+      cursor: pointer;
+  }
+  
+  li.active {
+      background-color: #ededfd;
+      color: #000;
+      font-weight: bold;
+  }
+  
+  .recomendet-friends {
+      margin: 16px 0 0 0;
+      padding: 0px 0 0px 0px;
+      border-radius: 4px;
+      background-color: #fff;
+  }
+  
+  h3.recomendet-friends-caption {
+      font-size: 14px;
+      padding: 10px 0 0px 18px;
+      color: #7c7c9e;
+  }
+  
+  .recomendet-friends-list {
+      margin: 22px 0 0 0;
+      padding: 0px 0 10px 18px;
+      list-style: none;
+  }
+  
+  .recomendet-friends-li {
+      display: flex;
+      margin: 0 0 20px 0;
+  }
+  
+  .recomendet-friends-li img {
+      width: 63px;
+      height: 63px;
+      object-fit: cover;
+      border-radius: 63px;
+  }
+  
+  .recomendet-friends-info {
+      margin: 0px 0 0 8px;
+  }
+  
+  p.recomendet-friends-info-name {
+      margin: 0;
+      font-size: 14px;
+      color: gray;
+  }
+  
+  p.recomendet-friends-info-friends {
+      margin: 0;
+      font-size: 14px;
+      color: gray;
+  }
+  
+  .request-friends {
+      color: gray !important;
+      background-color: transparent !important;
+      border: none !important;
+      font-size: 12px !important;
+      cursor: pointer;
+  }
+  
+  </style>
+  <!DOCTYPE html>
+  <html lang="ru">
+  
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>VK main</title>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+  
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  </head>
+  
+  <body>
+      <header>
+          <div class="header-middle">
+              <div class="logo">
+                  VK
+              </div>
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <input type="search" placeholder="Поиск">
+          </div>
+      </header>
+      <section class="page">
+          <section class="center">
+              <div class="sidebar-left">
+                  <div class="user-menu">
+                      <ul class="user-menu">
+                          <li>Моя страница</li>
+                          <li>Новости</li>
+                          <li>Сообщения</li>
+                          <li>Друзья</li>
+                          <li>Группы</li>
+                          <li>Фотографии</li>
+                          <li>Музыка</li>
+                          <li>Видео</li>
+                      </ul>
+                  </div>
+              </div>
+  
+              <div class="friends-list-center">
+                  <div class="friends-list-caption">
+                      <div class="all-online-freinds">
+                          <div class="all-friends-caption">
+                              <span>Все друзья</span>
+                              <span>131</span>
+                          </div>
+                          <div class="online-friends-caption">
+                              <span>Друзья онлайн</span>
+                              <span>34</span>
+                          </div>
+                      </div>
+                      <input type="button" class="search-friends-btn" value="Найти друзей">
+                  </div>
+                  <div class="d3">
+                      <form>
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                          <input type="text" placeholder="Начните вводить имя друга">
+                      </form>
+                  </div>
+                  <div class="friends-list-wall">
+                      <div class="friends-list-wall-li">
+                          <img src="img/task1_pic_8.jpeg" />
+                          <div class="friends-list-wall-li-info">
+                              <a href="javascript:void(0)">Екатерина Алекси</a>
+                              <p>ИГУ (ИГУ)</p>
+                              <a href="javascript:void(0)"><span>Написать сообщение</span></a>
+                          </div>
+                      </div>
+  
+                      <div class="friends-list-wall-li">
+                          <img src="img/task1_pic_8.jpeg" />
+                          <div class="friends-list-wall-li-info">
+                              <a href="javascript:void(0)">Алексей Михайлович</a>
+                              <p>ИГУ (ИТФ)</p>
+                              <a href="javascript:void(0)"><span>Написать сообщение</span></a>
+                          </div>
+                      </div>
+  
+                      <div class="friends-list-wall-li">
+                          <img src="img/task1_pic_8.jpeg" />
+                          <div class="friends-list-wall-li-info">
+                              <a href="javascript:void(0)">Алиса Кантек</a>
+                              <p>Написать сообщение</p>
+                          </div>
+                      </div>
+  
+                      <div class="friends-list-wall-li">
+                          <img src="img/task1_pic_8.jpeg" />
+                          <div class="friends-list-wall-li-info">
+                              <a href="javascript:void(0)">Абдулмалик Абдуразак</a>
+                              <p>ИГУ (ИТФ)</p>
+                              <a href="javascript:void(0)"><span>Написать сообщение</span></a>
+                          </div>
+                      </div>
+  
+                      <div class="friends-list-wall-li">
+                          <img src="img/task1_pic_8.jpeg" />
+                          <div class="friends-list-wall-li-info">
+                              <a href="javascript:void(0)">Анжелика Андреевна</a>
+                              <p>ИГУ (ИТФ)</p>
+                              <a href="javascript:void(0)"><span>Написать сообщение</span></a>
+                          </div>
+                      </div>
+  
+                      <div class="friends-list-wall-li">
+                          <img src="img/task1_pic_8.jpeg" />
+                          <div class="friends-list-wall-li-info">
+                              <a href="javascript:void(0)">Акжол Токтогонов</a>
+                              <p>ICLUB | Разработчик / стажёр</p>
+                              <a href="javascript:void(0)"><span>Написать сообщение</span></a>
+                          </div>
+                      </div>
+  
+                      <div class="friends-list-wall-li">
+                          <img src="img/task1_pic_8.jpeg" />
+                          <div class="friends-list-wall-li-info">
+                              <a href="javascript:void(0)">Тимур Кенжебек</a>
+                              <p>SDU | Suleyman Demirel University (CIY)</p>
+                              <a href="javascript:void(0)"><span>Написать сообщение</span></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="second-right-sidebar">
+                  <div class="friends-request">
+                      <ul class="friends-request-list">
+                          <li class="active">Мои друзья</li>
+                          <li>Заявки в друзья</li>
+                          <li>Подписчики</li>
+                          <li>Поиск друзей</li>
+                          <li>Список друзей</li>
+                      </ul>
+                  </div>
+                  <div class="recomendet-friends">
+                      <h3 class="recomendet-friends-caption">Возможные друзья</h3>
+                      <ul class="recomendet-friends-list">
+                          <li class="recomendet-friends-li">
+                              <img src="img/task1_pic_4.jpeg" />
+                              <div class="recomendet-friends-info">
+                                  <p class="recomendet-friends-info-name">Бакыт Айдарбек</p>
+                                  <p class="recomendet-friends-info-friends">23 общих друга</p>
+                                  <input type="button" class="request-friends" value="+ Добавить в друзья">
+                              </div>
+                          </li>
+                          <li class="recomendet-friends-li">
+                              <img src="img/task1_pic_4.jpeg" />
+                              <div class="recomendet-friends-info">
+                                  <p class="recomendet-friends-info-name">Айгерим Абдыкадыр</p>
+                                  <p class="recomendet-friends-info-friends">12 общих друзей</p>
+                                  <input type="button" class="request-friends" value="+ Добавить в друзья">
+                              </div>
+                          </li>
+                          <li class="recomendet-friends-li">
+                              <img src="img/task1_pic_4.jpeg" />
+                              <div class="recomendet-friends-info">
+                                  <p class="recomendet-friends-info-name">Айдана Абдыкадыр</p>
+                                  <p class="recomendet-friends-info-friends">8 общих друзей</p>
+                                  <input type="button" class="request-friends" value="+ Добавить в друзья">
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </section>
+      </section>
+  </body>
+  
+  </html>
+  
