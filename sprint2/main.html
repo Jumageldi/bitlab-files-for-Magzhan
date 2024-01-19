@@ -164,12 +164,18 @@ h6 {
 }
 
 
-.user-menu li {
+.user-menu li >a {
+    display: block;
+    color: gray;
+    text-decoration: none;
+    list-style-type: none;
+}
+.user-menu li{
     padding: 4px 4px 10px 0px;
     color: gray;
-    cursor: pointer;
+    list-style-type: none;
+    
 }
-
 img.wall-post-image {
     height: 300px;
     width: 100%;
@@ -391,21 +397,24 @@ img.friends-round-photo {
 .user-follow-info {
     display: flex;
     gap: 20px;
-    justify-content: space-around;
-    text-align: center;
+    justify-content: center;
+    
 }
 
 p.follow-number {
     padding: 16px 0 0 20px;
-    font-size: 22px;
+    font-size: 21px;
     margin: 0;
     color: #3e3e7f;
+    
 }
 
 p.follow-text {
     margin: 0;
-    padding: 0 0 0 0px;
+    padding: 0 0 0 0;
     color: #b8abab;
+    margin: 0;
+   
 }
 
 .user-photogallery {
@@ -416,7 +425,7 @@ p.follow-text {
 }
 
 .user-photogallery h3 {
-    color: #0f104c;
+    color: #8f8fad;
     font-size: 14px;
     padding: 10px 0 0 6px;
 }
@@ -464,6 +473,8 @@ p.follow-text {
 
 .user-wall-name p{
     margin: 0;
+    color: rgb(18, 45, 133);
+    font-weight: 1000;
 }
 
 
@@ -472,7 +483,7 @@ p.date {
 }
 
 .user-wall-text {
-    color: #50484e;
+    color: #867b83;
     margin: 18px 0 0 5px;
 }
 
@@ -586,16 +597,14 @@ p.date {
             <div class="sidebar-left">
                 <div class="user-menu">
                     <ul class="user-menu">
-                        <li>Моя страница</li>
-                        <li>Новости</li>
-                        <li>Сообщения</li>
-                        <li>Друзья</li>
-                        <li href="friend_page.html">Друзья</li>
-                        <a href="friend_page.html">Sp</a>
-                        <li>Группы</li>
-                        <li>Фотографии</li>
-                        <li>Музыка</li>
-                        <li>Видео</li>
+                        <li><a href="main.html">Моя страница</a> </li>
+                        <li><a href="#">Новости</a> </li>
+                        <li><a href="#">Сообщения</a> </li>
+                        <li><a href="friend_page.html">Друзья</a> </li>
+                        <li><a href="#">Группы</a> </li>
+                        <li><a href="#">Фотографии</a> </li>
+                        <li><a href="#">Музыка</a> </li>
+                        <li><a href="#">Видео</a> </li>
                     </ul>
                 </div>
             </div>
@@ -681,7 +690,7 @@ p.date {
                     <div class="user-follow-info">
                         <div class="follow-friends">
                             <p class="follow-number">1 331</p>
-                            <p class="follow-text">друг</p>
+                            <p class="follow-text">        друг</p>
                         </div>
                         <div class="follow-friends">
                             <p class="follow-number">222</p>
