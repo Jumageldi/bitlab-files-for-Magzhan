@@ -2,32 +2,34 @@
 <html>
 <head>
     <style>
-        .container {
-            text-align: center;
-        }
-        .profile {
-            display: inline-block;
-            margin: 10px;
-        }
-        .profile img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-        }
+       .friends {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.friend {
+    text-align: center;
+}
+.friend img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Друзья 1331</h1>
-        <div class="profile">
-            <img src="markan.jpg" alt="Маркан">
-            <p>Маркан</p>
+    <div class="friends">
+        <div class="friend">
+            <img src="friend1.jpg" alt="Friend 1">
+            <p>Имя друга 1</p>
         </div>
-        <div class="profile">
-            <img src="zhanel.jpg" alt="Жанель">
-            <p>Жанель</p>
+        <div class="friend">
+            <img src="friend2.jpg" alt="Friend 2">
+            <p>Имя друга 2</p>
         </div>
         <!-- Добавьте остальные профили аналогичным образом -->
     </div>
+    
 </body>
 </html>

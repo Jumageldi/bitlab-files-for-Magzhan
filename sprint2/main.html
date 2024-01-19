@@ -204,7 +204,6 @@ img.wall-post-image {
 input[type="search"] {
     background-color: #2c4869;
     height: 32px;
-    /* line-height: 32px; */
     margin: 4px;
     border-radius: 16px;
     color:#7d7f82;
@@ -235,7 +234,19 @@ i.fa {
 .friends-image {
     flex: 0 0 150px;
 }
-
+.friends {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.friend {
+    text-align: center;
+}
+.friend img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
 img.wall-friends-image {
     height: 150px;
     width: 150px;
@@ -349,7 +360,7 @@ img.friends-round-photo {
 
 .status {
     font-size: 12px;
-    color: #e4e4e4;
+    color: #676666;
 }
 
 .description-wall {
@@ -372,7 +383,7 @@ img.friends-round-photo {
 }
 
 .user-meta-value{
-    color: #6b81af;
+    color: #66788b;
     font-size: 14px;
     cursor: pointer;
 }
@@ -388,7 +399,7 @@ p.follow-number {
     padding: 16px 0 0 20px;
     font-size: 22px;
     margin: 0;
-    color: #0f104c;
+    color: #3e3e7f;
 }
 
 p.follow-text {
@@ -400,7 +411,7 @@ p.follow-text {
 .user-photogallery {
     padding: 7px 0 16px 16px;
     background-color: #fff;
-    margin: 22px 0 0 0;
+    margin: 22px 0 0 ;
     border-radius: 8px;
 }
 
@@ -412,18 +423,18 @@ p.follow-text {
 
 .user-photogallery span {
     font-size: 18px;
-    margin: 0 0 0 9px;
+    margin: 9px 0 0 9px;
 }
 
 .user-photogallery-list {
     display: flex;
-    gap: 8px;
+    gap: 7px;
 }
 
 .user-photogallery-list img {
   
-    height: 141px;
-    margin: 14px 0 0 0;
+    height: 130px;
+    margin: 10px 0 0 0;
     object-fit: cover;
 }
 
@@ -547,7 +558,7 @@ p.date {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VK main</title>
+    <title>VK from MAGA</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -579,6 +590,8 @@ p.date {
                         <li>Новости</li>
                         <li>Сообщения</li>
                         <li>Друзья</li>
+                        <li href="friend_page.html">Друзья</li>
+                        <a href="friend_page.html">Sp</a>
                         <li>Группы</li>
                         <li>Фотографии</li>
                         <li>Музыка</li>
@@ -593,32 +606,34 @@ p.date {
                 </div>
                 <div class="main-friends">
                     <p class="friends-name">Друзья <span>1331</span></p>
-                    <div class="friends-list">
-                        <div class="friends">
-                            <img src="images/friend1.png" class="friends-round-photo" />
-                            <span>Магжан</span>
+                    
+                    <div class="friends">
+                        <div class="friend">
+                            <img src="images/friend1.png" alt="Friend 1">
+                            <p>Магжан</p>
                         </div>
-                        <div class="friends">
-                            <img src="images/friend1.png" class="friends-round-photo" />
-                            <span>Магжан</span>
+                        <div class="friend">
+                            <img src="images/friend2.png" alt="Friend 2">
+                            <p>Жанель</p>
                         </div>
-                        <div class="friends">
-                            <img src="img/task1_pic_2.jpeg" class="friends-round-photo" />
-                            <span>Name</span>
+                        <div class="friend">
+                            <img src="images/friend3.png" alt="Friend 3">
+                            <p>Айзат</p>
                         </div>
-                        <div class="friends">
-                            <img src="img/task1_pic_2.jpeg" class="friends-round-photo" />
-                            <span>Name</span>
+                        <div class="friend">
+                            <img src="images/friend4.png" alt="Friend 4">
+                            <p>Елнур</p>
                         </div>
-                        <div class="friends">
-                            <img src="img/task1_pic_2.jpeg" class="friends-round-photo" />
-                            <span>Name</span>
+                        <div class="friend">
+                            <img src="images/friend5.png" alt="Friend 5">
+                            <p>Ерайдын</p>
                         </div>
-                        <div class="friends">
-                            <img src="img/task1_pic_2.jpeg" class="friends-round-photo" />
-                            <span>Name</span>
+                        <div class="friend">
+                            <img src="images/friend6.png" alt="Friend 6">
+                            <p>Абылхаир</p>
                         </div>
                     </div>
+                    
                 </div>
 
             </div>
@@ -655,17 +670,17 @@ p.date {
                         </div>
                         <div class="user-meta">
                             <div class="user-meta-description">Место работы</div>
-                            <div class="user-meta-value">фриланс</div>
+                            <div class="user-meta-value">Bitlab Academy</div>
                         </div>
                         <div class="user-meta">
                             <div class="user-meta-description">Веб-сайт</div>
-                            <div class="user-meta-value">https://portal.bitlab.kz/</div>
+                            <div class="user-meta-value">https://www.Zhuanyshev.kz/</div>
                         </div>
                     </div>
                     <hr />
                     <div class="user-follow-info">
                         <div class="follow-friends">
-                            <p class="follow-number">1 333</p>
+                            <p class="follow-number">1 331</p>
                             <p class="follow-text">друг</p>
                         </div>
                         <div class="follow-friends">
@@ -694,10 +709,10 @@ p.date {
                 <div class="user-photogallery">
                     <h3>Мои фотографии <span>95</span></h3>
                     <div class="user-photogallery-list">
-                        <img src="img/task1_pic_6.jpeg" />
-                        <img src="img/task1_pic_6.jpeg" />
-                        <img src="img/task1_pic_6.jpeg" />
-                        <img src="img/task1_pic_6.jpeg" />
+                        <img src="images/main-photo.png" />
+                        <img src="images/main-photo2.png" />
+                        <img src="images/main-photo3.png" />
+                        <img src="images/main-photo4.png" />
                     </div>
                 </div>
 
@@ -705,7 +720,7 @@ p.date {
                     <div class="user-wall-post">
                         <div class="user-wall-meta">
                             <div class="user-image">
-                                <img src="img/task1_pic_2.jpeg" />
+                                <img src="images/main-photo-text.png" />
                             </div>
                             <div class="user-wall-name">
                                 <p>Ilyas Zhuanyshev</p>
@@ -713,7 +728,7 @@ p.date {
                             </div>
                         </div>
                         <div class="user-wall-text">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, consequatur repellendus voluptatibus hic ipsa iusto quibusdam odit officiis ipsam tenetur ut natus voluptate commodi quod dolor a consequuntur eveniet inventore.</p>
+                            <p>Выдержка из интервью Льюиса Хэмилтона и Тото Вольффа: Вопрос: Себастьян долго ехал за вами - вы ожидали подобного? Льюис Хэмилтон: Да, Себастьян был очень близко. Если бы мы поменялись ролями, и Себастьян был впереди, то он, возможно, создал отрыв. У Ferrari был выше темп на UltraSoft. На втором отрезке уже мой темп был выше, но я остановился настолько рано, что не знал, выдержит ли резина. Я не хотел атаковать, чтобы сократить отставание, зная, что я в любом случае не смогу обогнать - я бы только испортил шины и упустил вторую позицию. Оказавшись позади Себастьяна, я постарался</p>
                         </div>
                     </div>
                 </div>
