@@ -33,3 +33,572 @@
     
 </body>
 </html>
+
+
+
+
+
+<style >
+    body{
+        margin: 0;
+        background-color: #dddfe2;
+    }
+    
+    header{
+        background-color: #4277a5;
+        display: flex;
+        justify-content: space-between;
+        height: 49px;
+        padding: 0 40px 0 12px;
+        width:100%;
+    }
+    
+    .header-middle{
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+    }
+    
+    .logo{
+        color: #fff;
+        font-size: 24px;
+        line-height: 40px;
+        padding: 4px 16px 4px 16px;
+        margin: 0 0 0 76px;
+        width: 195px;
+        font-weight: 800;
+        font-family: 'Roboto', serif;
+    }
+    
+    .search-bar { background-color: #222; }
+    .search-bar * { color: white !important; }
+    .search-bar input { border-bottom-color: white; }
+    .md-errors-spacer { display:none; }
+    
+    .menu{
+        display: flex;
+        gap: 24px;
+        list-style: none;
+        line-height: 60px;
+        padding: 0 16px 0 0;
+        color: #b7c0c8;
+    }
+    
+    footer{
+        background-color: #000;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        text-align: center;
+        line-height: 80px;
+    }
+    
+    
+    input[type="submit"] {
+        color: #fff;
+        border-radius: 4px;
+        background-color: #4CAF50;
+        border-color: #fff;
+        cursor: pointer;
+        padding: 8px;
+    }
+    
+    .page {
+        padding: 2px 0;
+    }
+    
+    .center{
+        width: 1200px;
+        display: flex;
+        margin:27px auto;
+        gap: 12px;
+    }
+    
+    .main-news {
+        display: flex;
+        background-color: #8bc34a87;
+        padding: 12px;
+        margin: 12px;
+    }
+    
+    .first-news-image {
+        padding: 0 12px 0 12px;
+        width: 700px;
+        height: 350px;
+        object-fit: cover;
+    }
+    
+    .latest-news-list {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .latest-news {
+        border: 1px solid black;
+        padding: 0 0 8px 0;
+    }
+    
+    .latest-news img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    input[type="button"] {
+        color: #fff;
+        background-color: #1e1870;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    
+    .latest-news-info {
+        padding: 8px;
+    }
+    
+    h6 {
+        font-size: 20px;
+        margin: 0;
+    }
+    
+    .sidebar-left{
+        flex-basis: 216px;
+        padding: 0 0 0 50px;
+    }
+    
+    .main {
+        flex: 0 0 50%;
+        padding: 20px;
+    }
+    
+    .sidebar-right {
+        flex: 0 0 26%;
+        padding: 20px;
+    }
+    
+    .user-info span{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    
+    .user-info a {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    
+    .user-info aside {
+        color:gray;
+        text-align: center;
+    }
+    
+    .user-info aside:before {
+        content: " - ";
+    }
+    
+    .user-info {
+        border-left: 1px solid #e5e5e5;
+        border-right: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 12px;
+    }
+    
+    
+    .user-menu li >a {
+        display: block;
+        color: gray;
+        text-decoration: none;
+        list-style-type: none;
+    }
+    .user-menu li{
+        padding: 4px 4px 10px 0px;
+        color: gray;
+        list-style-type: none;
+        
+    }
+    img.wall-post-image {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .right-posts-list {
+        border: 1px solid #e4e4e4;
+       
+        width: 80%;
+    }
+    
+    .name-date {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .right-post {
+        border-bottom: 1px solid #e4e4e4;
+        padding: 4px 4px 4px 8px;
+    }
+    
+    .right-post p {
+        margin: 0px;
+    }
+    
+    .magazine-name {
+        font-size: 16px;
+        color: #e4e4e4;
+    }
+    
+    input[type="search"] {
+        background-color: #2c4869;
+        height: 32px;
+        margin: 4px;
+        border-radius: 16px;
+        color:#7d7f82;
+    }
+    
+    i.fa {
+        width: 20px;
+        height: 20px;
+        line-height: 37px;
+        text-align: center;
+        margin-right: -30px;
+        font-size: 14px;
+        position: relative;
+        z-index: 1;
+        float: left;
+        color:#7d7f82;
+      }
+    
+      i.fa + input {
+        padding-left: 26px;
+      }
+    
+    
+    .wall-friends {
+        display: flex;
+        justify-content: space-between;
+    }
+    .friends-image {
+        flex: 0 0 150px;
+    }
+    .friends {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .friend {
+        text-align: center;
+    }
+    .friend img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+    }
+    img.wall-friends-image {
+        height: 150px;
+        width: 150px;
+        border-radius: 180px;
+        object-fit: cover;
+    }
+    
+    .friends-info {
+        flex: 0 0 65%;
+    }
+    
+    input.send-btn {
+        color: #fff;
+        background-color: #9E9E9E;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+    
+    input.remove-btn {
+        color: #fff;
+        background-color: #F44336;
+        border-radius: 2px;
+        cursor: pointer;
+        height: 30px;
+    }
+    
+    .intro-information {
+        width: 300px;
+    }
+    .main-photo {
+        background-color: #fff;
+        padding: 13px 16px;
+        margin: 0 0 12px 0;
+        border-radius: 8px;
+    }
+    
+    .main-photo img{
+        width: 274px;
+        height: 274px;
+        object-fit: cover;
+    }
+    
+    .main-photo p {
+        text-align: center;
+        margin: 16px 4px 4px 4px;
+        padding: 4px;
+        background-color: #e4e4e4;
+        border-radius: 4px;
+        color: #6b81af;
+    }
+    
+    .main-friends {
+        background-color: #fff;
+        padding: 10px;
+        flex-basis: 260px;
+        margin: 32px 0;
+        border-radius: 8px;
+    }
+    
+    p.friends-name {
+        padding: 0px 5px 0 4px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #919191;
+    }
+    
+    .friends-list{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: center;
+    }
+    
+    img.friends-round-photo {
+        width: 54px;
+        border-radius: 54px;
+        height: 54px;
+        object-fit: cover;
+        margin: 0 0 4px 0;
+    }
+    
+    .friends span {
+        color: #7595ae;
+    }
+    .vk-wall {
+        width: 660px;
+        
+    }
+    
+    .text-information {
+        background-color: #fff;
+        padding: 12px;
+        border-radius: 8px;
+    }
+    
+    .name {
+        display: flex;
+        
+    }
+    
+    .name-and-status {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .name p {
+        font-size: 20px;
+        font-weight: 500;
+        margin: 4px 0 0px 10px;
+    }
+    
+    .status {
+        font-size: 12px;
+        color: #676666;
+    }
+    
+    .description-wall {
+        padding: 0 0 0 10px;
+    }
+    
+    .user-about {
+        padding: 13px 0 0 10px;
+    }
+    
+    .user-meta {
+        display: flex;
+        margin: 0 0 6px 0;
+    }
+    
+    .user-meta-description {
+        width: 220px;
+        font-size: 14px;
+        color: #aeaeae;
+    }
+    
+    .user-meta-value{
+        color: #66788b;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    
+    .user-follow-info {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        
+    }
+    
+    p.follow-number {
+        padding: 16px 0 0 20px;
+        font-size: 21px;
+        margin: 0;
+        color: #3e3e7f;
+        
+    }
+    
+    p.follow-text {
+        margin: 0;
+        padding: 0 0 0 0;
+        color: #b8abab;
+        margin: 0;
+       
+    }
+    
+    .user-photogallery {
+        padding: 7px 0 16px 16px;
+        background-color: #fff;
+        margin: 22px 0 0 ;
+        border-radius: 8px;
+    }
+    
+    .user-photogallery h3 {
+        color: #8f8fad;
+        font-size: 14px;
+        padding: 10px 0 0 6px;
+    }
+    
+    .user-photogallery span {
+        font-size: 18px;
+        margin: 9px 0 0 9px;
+    }
+    
+    .user-photogallery-list {
+        display: flex;
+        gap: 7px;
+    }
+    
+    .user-photogallery-list img {
+      
+        height: 130px;
+        margin: 10px 0 0 0;
+        object-fit: cover;
+    }
+    
+    
+    .user-wall-post-list {
+        background-color: #fff;
+        border-radius: 4px;
+        margin: 18px 0 0 0;
+        padding: 16px;
+    }
+    
+    .user-image img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 100px;
+    }
+    
+    .user-wall-meta {
+        display: flex;
+    }
+    
+    .user-wall-name {
+        padding: 10px 0 0 16px;
+        margin: 0;
+    }
+    
+    .user-wall-name p{
+        margin: 0;
+        color: rgb(18, 45, 133);
+        font-weight: 1000;
+    }
+    
+    
+    p.date {
+        color: #b2a9b0;
+    }
+    
+    .user-wall-text {
+        color: #867b83;
+        margin: 18px 0 0 5px;
+    }
+    
+    .user-wall-text p{
+        
+        margin: 0;
+    }
+    
+    
+    .d3 {
+        margin: 12px 0 0 0;
+        padding: 0px 0px 0px 25px;
+        border-bottom: 3px solid whitesmoke;
+    }
+    .d3 form {
+      background: #fff;
+    }
+    .d3 input, .d3 button {
+      border: none;
+      outline: none;
+      background: transparent;
+    }
+    .d3 input {
+      width: 100%;
+      height: 42px;
+      padding-left: 15px;
+    }
+    .d3 button {
+      height: 42px;
+      width: 42px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+    .d3 button:before {
+      content: "\f002";
+      font-family: FontAwesome;
+      font-size: 16px;
+      color: #F9F0DA;
+    }
+    
+    .friends-list-wall {
+        padding: 17px 0px 0px 25px;
+    }
+    
+    .friends-list-wall-li {
+        display: flex;
+        padding: 0px 0 4px 0;
+        margin: 0 0 11px 0;
+        border-bottom: 3px solid whitesmoke;
+    }
+    
+    .friends-list-wall-li img {
+        width: 90px;
+        height: 90px;
+        border-radius: 70px;
+    }
+    
+    .friends-list-wall-li-info {
+           margin: 0 0 4px 12px;
+    }
+    
+    .friends-list-wall-li-info a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #4385b4;
+        font-weight: 600;
+    }
+    
+    .friends-list-wall-li-info p {
+        margin: 0 0 4px 0;
+    }
+    
+    
+    </style>
+    
+    
