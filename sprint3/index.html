@@ -1,4 +1,30 @@
 <style>
+     body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+        input, select {
+            margin: 0 10px;
+            padding: 5px;
+        }
+        .result-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .result-box {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px;
+        }
 header{
     background-color: #5a7892;
     display: flex;
@@ -32,7 +58,7 @@ header{
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprint3 from MAGA</title>
+    <title>Sprint3 by MAGA</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,13 +70,58 @@ header{
 
 </head>
 
+
+
 <body>
     <header style="">
         <div class="header-middle">
             <div class="logo">
-                Wallet
+                Wallet converter
             </div>
         </div>
     </header>
+    <h1>Конвертер валют</h1>
 
+    <form id="currencyForm">
+        <label for="amount">Сумма:</label>
+        <input type="number" id="amount" step="0.01" oninput="convertCurrency()" required>
+
+        <label for="currency">Валюта:</label>
+        <select id="currency" onchange="convertCurrency()" required>
+            <option value="KZT">Тенге (KZT)</option>
+            <option value="USD">Доллар (USD)</option>
+            <option value="EUR">Евро (EUR)</option>
+        </select>
+
+        <div class="result-container" id="result">
+            <label for="resultKZT" class="result-box-label">KZT:</label>
+            <div class="result-box" id="resultKZT"></div>
+
+            <label for="resultUSD" class="result-box-label">USD:</label>
+            <div class="result-box" id="resultUSD"></div>
+
+            <label for="resultEUR" class="result-box-label">EUR:</label>
+            <div class="result-box" id="resultEUR"></div>
+        </div>
+    </form>
+
+    <script>
+        function convertCurrency() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const baseCurrency = document.getElementById('currency').value;
+            let rates = {
+                KZT: { buy: 1, sell: 1 },
+                USD: { buy: 431, sell: 429 },
+                EUR: { buy: 509, sell: 507 }
+            };
+
+            const resultKZT = (amount * rates[baseCurrency].buy).toFixed(2);
+            const resultUSD = (amount / rates[baseCurrency].sell * rates.USD.buy).toFixed(2);
+            const resultEUR = (amount / rates[baseCurrency].sell * rates.EUR.buy).toFixed(2);
+
+            document.getElementById('resultKZT').innerHTML = `<p>---</p>`;
+            document.getElementById('resultUSD').innerHTML = `<p>${resultUSD} тенге</p>`;
+            document.getElementById('resultEUR').innerHTML = `<p>${resultEUR} тенге</p>`;
+        }
+    </script>
 </body>

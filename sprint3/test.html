@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint3 by MAGA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        form {
+            margin-top: 50px;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+        }
+
+        label {
+            display: inline-block;
+            text-align: left;
+            margin-right: 10px;
+        }
+
+        input,
+        select {
+            margin-right: 30px;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        .result-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .result-box {
+            border: 2px solid black;
+            background-color: rgb(233, 235, 235);
+            padding: 20px;
+            width: 150px;
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+
+        header {
+            background-color: #5a7892;
+            display: flex;
+            justify-content: space-between;
+            height: 49px;
+            padding: 0 40px 0 12px;
+            width: 100%;
+        }
+
+        .header-middle {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 24px;
+            line-height: 40px;
+            padding: 4px 16px 4px 16px;
+            margin: 0 0 0 76px;
+            width: 195px;
+            font-weight: 800;
+            font-family: 'Roboto', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="">
+        <div class="header-middle">
+            <div class="logo">
+                Wallet converter
+            </div>
+        </div>
+    </header>
+
+    <form id="currencyForm">
+        <label for="amount">Введите сумму:</label>
+        <input type="number" name="foo" id="amount" oninput="convertCurrency()">
+
+        <label for="currency">Валюта:</label>
+        <select id="currency" onchange="convertCurrency()" required>
+            <option value="KZT">KZT</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+        </select>
+
+        <div class="result-container" id="result">
+            <div class="result-box" id="resultKZT"></div>
+            <div class="result-box" id="resultUSD"></div>
+            <div class="result-box" id="resultEUR"></div>
+        </div>
+    </form>
+
+    <script>
+        function convertCurrency() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const baseCurrency = document.getElementById('currency').value;
+            let rates = {
+                KZT: { buy: 1, sell: 1 },
+                USD: { buy: 431, sell: 429 },
+                EUR: { buy: 509, sell: 507 }
+            };
+
+            let resultKZT, resultUSD, resultEUR;
+
+            if (baseCurrency === "KZT") {
+                resultKZT = "-";
+                resultUSD = (amount / rates[baseCurrency].sell * rates.USD.buy).toFixed(2);
+                resultEUR = (amount / rates[baseCurrency].sell * rates.EUR.buy).toFixed(2);
+            } else if (baseCurrency === "USD") {
+                resultKZT = (amount * rates[baseCurrency].buy / rates.KZT.sell).toFixed(2);
+                resultUSD = "-";
+                resultEUR = (amount * rates[baseCurrency].buy / rates.EUR.sell).toFixed(2);
+            } else if(baseCurrency==="EUR"){
+                resultKZT = (amount * rates[baseCurrency].buy / rates.KZT.sell).toFixed(2);
+                resultUSD = (amount * rates[baseCurrency].buy / rates.USD.sell).toFixed(2);
+                resultEUR = "-";
+            }
+
+            document.getElementById('resultKZT').innerHTML = `<p>${resultKZT} тенге</p>`;
+            document.getElementById('resultUSD').innerHTML = `<p>${resultUSD} долларов</p>`;
+            document.getElementById('resultEUR').innerHTML = `<p>${resultEUR} евро</p>`;
+        }
+    </script>
+</body>
+
+</html>
