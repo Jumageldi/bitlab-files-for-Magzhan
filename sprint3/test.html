@@ -26,18 +26,24 @@
             justify-content: left;
         }
 
-        label {
-            display: inline-block;
-            text-align: left;
-            margin-right: 10px;
-        }
-
-        input,
-        select {
-            margin-right: 30px;
-            padding: 10px;
-            margin-top: 5px;
-        }
+        label{
+        display: inline-block;
+        text-align: left;
+       }
+     
+       input {
+        display: block;
+           margin-right: 10px;
+           padding: 10px;
+           margin-top: 5px;
+       }
+       select{
+        display: block;
+           margin-right: 30px;
+           margin-bottom: -20px;
+           padding: 10px;
+           margin-top: 5px;
+       }
 
         .result-container {
             display: flex;
@@ -45,12 +51,12 @@
         }
 
         .result-box {
-            border: 2px solid black;
+           
             background-color: rgb(233, 235, 235);
             padding: 20px;
             width: 150px;
             margin-top: 5px;
-            margin-right: 10px;
+            margin-right: 15px;
         }
 
         header {
@@ -91,20 +97,20 @@
     </header>
 
     <form id="currencyForm">
-        <label for="amount">Введите сумму:</label>
-        <input type="number" name="foo" id="amount" oninput="convertCurrency()">
-
-        <label for="currency">Валюта:</label>
-        <select id="currency" onchange="convertCurrency()" required>
+        <label>Введите сумму:<input type=number name=foo id=amount oninput=convertCurrency()></label>
+ 
+        <label for="currency">    <select id="currency" onchange="convertCurrency()" required>
             <option value="KZT">KZT</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
-        </select>
-
+        </select></label>
+ 
         <div class="result-container" id="result">
-            <div class="result-box" id="resultKZT"></div>
-            <div class="result-box" id="resultUSD"></div>
-            <div class="result-box" id="resultEUR"></div>
+            <label for="resultKZT" class="result-box-label"><strong>KZT(tenge)</strong><div class="result-box" id="resultKZT"></div></label>
+ 
+            <label for="resultUSD" class="result-box-label"><strong>USD(dollar)</strong><div class="result-box" id="resultUSD"></div></label>
+ 
+            <label for="resultEUR" class="result-box-label"><strong>EUR(euro)</strong><div class="result-box" id="resultEUR"></div></label>
         </div>
     </form>
 
@@ -114,29 +120,30 @@
             const baseCurrency = document.getElementById('currency').value;
             let rates = {
                 KZT: { buy: 1, sell: 1 },
-                USD: { buy: 431, sell: 429 },
-                EUR: { buy: 509, sell: 507 }
+                USD: { buy: 429, sell: 431 },
+                EUR: { buy: 507, sell: 509 }
             };
 
             let resultKZT, resultUSD, resultEUR;
 
+           
             if (baseCurrency === "KZT") {
                 resultKZT = "-";
-                resultUSD = (amount / rates[baseCurrency].sell * rates.USD.buy).toFixed(2);
-                resultEUR = (amount / rates[baseCurrency].sell * rates.EUR.buy).toFixed(2);
+                resultUSD = (amount / (rates[baseCurrency].sell * rates.USD.buy)).toFixed(2);
+                resultEUR = (amount / ( rates.EUR.buy)).toFixed(2);
             } else if (baseCurrency === "USD") {
-                resultKZT = (amount * rates[baseCurrency].buy / rates.KZT.sell).toFixed(2);
+                resultKZT = (amount * (rates[baseCurrency].sell * rates.KZT.buy)).toFixed(2);
                 resultUSD = "-";
-                resultEUR = (amount * rates[baseCurrency].buy / rates.EUR.sell).toFixed(2);
+                resultEUR = (amount *( rates[baseCurrency].sell / rates.EUR.buy)).toFixed(2);
             } else if(baseCurrency==="EUR"){
-                resultKZT = (amount * rates[baseCurrency].buy / rates.KZT.sell).toFixed(2);
-                resultUSD = (amount * rates[baseCurrency].buy / rates.USD.sell).toFixed(2);
+                resultKZT = (amount * (rates[baseCurrency].sell / rates.KZT.buy)).toFixed(2);
+                resultUSD = (amount * (rates[baseCurrency].sell / rates.USD.buy)).toFixed(2);
                 resultEUR = "-";
             }
 
-            document.getElementById('resultKZT').innerHTML = `<p>${resultKZT} тенге</p>`;
-            document.getElementById('resultUSD').innerHTML = `<p>${resultUSD} долларов</p>`;
-            document.getElementById('resultEUR').innerHTML = `<p>${resultEUR} евро</p>`;
+            document.getElementById('resultKZT').innerHTML = `<p>${resultKZT}</p>`;
+            document.getElementById('resultUSD').innerHTML = `<p>${resultUSD}</p>`;
+            document.getElementById('resultEUR').innerHTML = `<p>${resultEUR}</p>`;
         }
     </script>
 </body>
