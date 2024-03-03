@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             return;
         }
         HttpSession session = req.getSession();
-        session.setAttribute("currentUser", user); // Store the User object, not just the ID
-        resp.sendRedirect("/profile"); // Redirect to the ProfileServlet
+        session.setAttribute("currentUser", user); // тут поменял, не смог сделать через айди
+        resp.sendRedirect("/profile"); 
     }
 }
