@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/javaee-sprint2-is-work/out/artifacts/sprint2javaee_Web_exploded/WEB-INF/lib/jakarta.servlet-api-6.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/javaee-sprint2-is-work/out/artifacts/sprint2javaee_Web_exploded/WEB-INF/lib/jakarta.servlet.jsp-api-3.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/javaee-sprint2-is-work/out/artifacts/sprint2javaee_Web_exploded/WEB-INF/lib/postgresql-42.7.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
